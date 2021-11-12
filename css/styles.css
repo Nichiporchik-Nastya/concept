@@ -73,6 +73,7 @@
 		}
 		h1,
     h2,
+    h3,
 		h4{
 			font-family: 'Philosopher', sans-serif; /* если выбранный шрифт не отобразится, его заменить установленный по умолчанию в браузере шрифт без засечек */
 		}
@@ -285,8 +286,9 @@ footer{
 	align-items: center;
 	transform: scale(0);
 	transition: opacity .2s;
-	z-index: 5;
-	flex-direction: column;
+	z-index: 25;
+  
+	/* flex-direction: column; */
 }
 .is-open{
 	opacity: 1;
@@ -298,17 +300,18 @@ footer{
 	max-width: 75%;
     /* min-height: 80%; */
 	background-color: #fff;
-	flex-grow: 1; /* занимает всё доступное место по ширине*/
+	/* flex-grow: 1; занимает всё доступное место по ширине */
 	opacity: 0;
 	display: flex;
-	padding: 5px;
+	padding: 150px;
+  padding-left: 100px;
 	border-radius: 10px;
-	/* position: relative; */
 	transform: translateY(-10%);
 	transition: transform .2s, opacity .2s;
 	transition-delay: .2s;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.161);
-	margin: 5px 0px;
+	margin: 0 auto;
+
 }
 .is-open > .modal_window{ /* эти стили применяются к .modal_window, когда у родительского элемента (.modal_wrapper) есть класс .is-open*/
 	opacity: 1;
@@ -317,7 +320,6 @@ footer{
 .modal_close_button{
 	background-color: transparent;
 	border: none;
-	/* position: relative; */
 	margin: 20px;
 	align-self: flex-end;
 	cursor: pointer;
@@ -328,6 +330,36 @@ footer{
 .modal_wrapper.is-open .modal_close_button{
 	opacity: 1;
 }
+.modal_title{
+  line-height: 0.75em;
+  font-size: 4em;
+  text-align: right;
+  align-self: center;
+  pointer-events: none;
+  margin-bottom: 30px;
+}
+.modal_title span{
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+.modal_subtitle{
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 15px;
+  pointer-events: none;
+}
+.modal_block p{
+ max-width: 300px;
+ margin-bottom: 20px;
+ word-wrap: break-word;
+ align-items: end;
+ margin-left: 40px;
+ pointer-events: none;
+}
+
+
+
 
 /* ========================================== */
 
@@ -358,8 +390,6 @@ footer{
     animation-name: slideup; /* какая анимация применяется к элементу */
     animation-fill-mode: forwards;
     /* transition: opacity 2s ease-out; */
-
-     font-stretch: ultra-expanded;
     font-weight: bold;
     line-height: 1em;
     font-size: 6em;
@@ -422,7 +452,24 @@ footer{
 /*}
 
 /*медиазапросы*/
-
+@media(max-width: 1220px){
+.modal_window{
+    padding: 50px;
+  }
+  .modal_title{
+  font-size: 2em;
+}
+.modal_title span{
+  font-size: 1em;
+}
+.modal_subtitle{
+  font-size: 1em;
+}
+.modal_block p{
+ margin-bottom: 20px;
+ font-size: 12px;
+}
+ }
 @media(max-width: 920px){ 
 	.main_title{
     font-size: 4em;
@@ -430,7 +477,6 @@ footer{
   .main_subtitle{
     line-height: 1em;
   }
-
   .submenu{
    transform: translateY(0px);
   }
@@ -443,6 +489,7 @@ footer{
   .footer_block{
     font-size: 1em;
   }
+  
 }
 
 @media(max-width: 750px){/* скрывается меню */
@@ -526,6 +573,9 @@ footer{
   }
   footer .logo{
     margin: 0;
+  }
+  .modal_window{
+    display: block;
   }
 }
 

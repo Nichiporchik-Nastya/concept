@@ -143,18 +143,20 @@ includedHeader.insertAdjacentHTML("afterbegin", `
 
 let modalWrapper = document.querySelector('.modal_wrapper');
 modalWrapper.insertAdjacentHTML("afterbegin", `
-	<button class="modal_close_button">
+		<div class="modal_window ">
+		<button class="modal_close_button">
 			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M2 2L22 22" stroke="white" stroke-width="2" stroke-linecap="round" />
-				<path d="M22 2L2 22" stroke="white" stroke-width="2" stroke-linecap="round" />
+				<path d="M2 2L22 22" stroke="black" stroke-width="2" stroke-linecap="round" />
+				<path d="M22 2L2 22" stroke="black" stroke-width="2" stroke-linecap="round" />
 			</svg>
 		</button>
-		<div class="modal_window">
+		<h2 class="modal_title"><span>Conceptrary</span> <br>сборник<br>концептов</h2>
+			<div class="modal_block">
+				<h3 class="modal_subtitle">concept&nbsp;– идея + library&nbsp;– библиотека</h3>
+				<p>Онлайн-сборник концептуальных изображений персонажей и&nbsp;окружения из самых разных мульт-вселенных</p>
 
-			Conceptrary (concept - (от англ.) идея + library - библиотека) -- оелайн-сборник концепт-артов персонажей и окружения из самых разных мульт-вселенных.
-
-			Это в первую очередь курсовой проект студентки БГТУ. Сам сайт несёт развлекательно-познавательный характер, не имеет своей целью оскорбить чьи-либо чувства или использовать чужой труд в коммерческих челях. Все права на изображения и концепты принадлежат их правообладателям.
-			
-			
-		</div>
+				<p>Это в первую очередь курсовой проект студентки БГТУ. Сам сайт несёт развлекательно-познавательный характер и&nbsp;не имеет
+				своей целью оскорбить чьи-либо чувства или использовать чужой труд в&nbsp;коммерческих целях. Все права на изображения принадлежат их правообладателям</p>
+			</div>
+	</div>
 `);
