@@ -1,0 +1,545 @@
+/* подключение шрифта светлого начертания в различных форматах из локальной папки */
+/* @font-face { 
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.eot');
+    src: local('Montserrat Light'), local('../fonts/Montserrat-Light'),
+        url('../fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Light.woff2') format('woff2'),
+        url('../fonts/Montserrat-Light.woff') format('woff'),
+        url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+} */
+/* подключение шрифта обычного начертания в различных форматах из локальной папки */
+@font-face { 
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.eot');
+    src: local('../fonts/Montserrat Regular'), local('../fonts/Montserrat-Regular'),
+        url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff'),
+        url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* подключение шрифта обычного начертания в различных форматах из локальной папки */
+@font-face { 
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.eot');
+    src: local('../fonts/Montserrat Bold'), local('../fonts/Montserrat-Bold'),
+        url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/Montserrat-Bold.woff') format('woff'),
+        url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+/* подключение шрифта жирного начертания в различных форматах из локальной папки */
+@font-face { 
+    font-family: 'Philosopher';
+    /* src: url('../fonts/Montserrat-Regular.eot'); */
+    src: local('../fonts/Philosopher'), /* local('../fonts/Montserrat-Regular'), */
+		url('../fonts/Philosopher.ttf') format('truetype'),
+        /* url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff') */;
+        
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ======================Стили основных элементов страницы====================== */
+    *{
+			box-sizing: border-box;
+			outline: none;
+      
+		}
+		body{
+			font-family: 'Montserrat', 'Arial', sans-serif; /* если выбранный шрифт не отобразится, установится следующий из указанных или его заменить установленный по умолчанию в браузере шрифт без засечек */
+			font-size: 1em;
+			font-weight: 200;
+    	font-style: normal;
+			background-color: #ececec;
+		}
+		img{
+			display: block;
+		}
+		/* h1{
+			font-family: 'PTSans', sans-serif;
+		} */
+		a{
+			text-decoration: none; /*отключить подчеркивание ссылок*/
+			color: inherit;
+		}
+		h1,
+    h2,
+		h4{
+			font-family: 'Philosopher', sans-serif; /* если выбранный шрифт не отобразится, его заменить установленный по умолчанию в браузере шрифт без засечек */
+		}
+		header{
+			background-color: aliceblue;
+			font-size: 0.8em;
+		}
+		
+/* ===============================Стили шапки сайта========================= */
+.logo{
+	margin: 10px 0px;
+  /* background: url("../svg/black_logo.svg"); */
+}
+.navbar{
+	display: flex;  /*гибкое расположение элемента*/
+	align-items: center; /* выравниевание вертикально по центру*/
+	justify-content: space-between; /*расположить по краям*/
+	margin: 0px 5%;
+}
+.navbar_panel{
+	/* flex-grow: 1; растянуть по ширине ??? */
+	display: flex; /*сделать гибким*/
+	align-items: center; /*выровнять вертикально по центру*/
+	/* justify-content: space-between; */
+  float: right;
+}
+
+.navbar_menu{
+	margin-right: auto; /*автоматический отступ справа*/
+	margin: 0px;
+}
+.menu{
+	list-style: none;  /* без стиля элементов списка  */
+	margin: 0;  /*обнулить отступы сверху и снизу*/
+	padding: 0 30px; /*внутренние оступы слева и справа*/
+	display: flex;
+
+  font-size: 1em;
+}
+
+/*правило применяется ко всем пунктам кроме последнего*/
+/*.menu_item:not(:last-child){ 
+	margin-right: 14px; 
+}*/
+.menu_item{
+	margin: 5% 0px;
+  font-weight: black;
+}
+.menu_link{
+	color: inhert; /*цвет текста как у родителя (body)*/
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+  cursor: pointer;
+
+}
+.logo:active{
+  transform: translateY(1px);
+}
+.menu_link:after{
+	content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  margin-top: 15px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .3s ease;
+}
+.menu_item:hover .menu_link:after{
+  transform: scaleX(1); /* плавное подчёркивание */
+  transform-origin: bottom left;
+  opacity: 1;
+}
+/* .menu_item:first-child .menu_link:after{
+ background-color: #ef774a;
+}
+.menu_item:last-child .menu_link:after{
+ background-color: #256EEB;
+} */
+.submenu {
+  -webkit-transform: translateY(-20px);
+	-ms-transform: translateY(-20px);
+	transform: translateY(-20px);
+  /*-webkit-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;*/
+  background: aliceblue;
+  z-index: 10;
+  position: absolute;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+#studio:hover .submenu {
+  -webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+  opacity: 1;
+}
+#studio:hover .show_submenu{
+  transform: rotate(0deg) scale(0.7, 0.7);
+}
+.submenu_item{
+  padding: 15px 80px 15px 20px;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+.submenu_item:hover{
+  background: rgb(221, 229, 236);
+}
+.show_submenu{
+  transform: rotate(180deg) scale(0.7, 0.7);
+  transition: all 0.4s;
+}
+.menu_button{
+	border: none;
+	background-color: inherit;
+	cursor: pointer;
+	display: none;
+}
+.close_menu{
+	display: none;
+	background-color: #fff;
+	border: none;
+	margin-right: -20px;
+	margin-top: -10px;
+}
+/*=================================*/
+footer{
+			/* margin-top: -15%; */
+			/* color: #C2CFDD; */
+
+			height: auto;
+      padding-bottom: 20px;
+     
+		}
+		.footer_block{
+      color: #000;
+      padding: 45px 0px;
+			/* position: relative; */
+			display: flex;
+      justify-content: space-between;
+		}
+		.mail{
+			font-size: 1.5em;
+      margin-bottom: 10px;
+		}
+    .author_info{
+	    opacity: 0.5;
+	    /* padding: 10px; */
+	    font-size: 0.7em;
+      margin-bottom: 30px;
+      pointer-events: none;
+    }
+    .foot_bar .menu{
+      display: flex;
+      /* font-weight: bold; */
+
+    }
+    .foot_bar .menu_item{
+      margin-top: 5px;
+      margin-bottom: 12px;
+    }
+    .foot_bar .submenu{
+        -webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+      opacity: 1;
+      position: relative;
+      background-color: inherit;
+      padding-left: 1px;
+      margin-top: 10px;
+      /* display: block; */
+    }
+    .foot_bar .submenu_item{
+      padding: 5px 20px;
+      font-size: 0.8em;
+    }
+    .foot_bar .submenu_item:hover{
+      background: inherit;
+    }
+    .foot_bar .menu_link:after{
+      display: none;
+    }
+    .foot_wrapper{
+      display: block;
+    }
+    .text{
+      display: block;
+    }
+/*стили модального окна*/
+
+.modal_wrapper{
+	opacity: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0);
+	transition: opacity .2s;
+	z-index: 5;
+	flex-direction: column;
+}
+.is-open{
+	opacity: 1;
+	transform: scale(1);
+}
+.modal_window{
+	/* max-width: 1000px;
+	min-height: 565px; */
+	max-width: 75%;
+    /* min-height: 80%; */
+	background-color: #fff;
+	flex-grow: 1; /* занимает всё доступное место по ширине*/
+	opacity: 0;
+	display: flex;
+	padding: 5px;
+	border-radius: 10px;
+	/* position: relative; */
+	transform: translateY(-10%);
+	transition: transform .2s, opacity .2s;
+	transition-delay: .2s;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.161);
+	margin: 5px 0px;
+}
+.is-open > .modal_window{ /* эти стили применяются к .modal_window, когда у родительского элемента (.modal_wrapper) есть класс .is-open*/
+	opacity: 1;
+	transform: translateY(0);
+}
+.modal_close_button{
+	background-color: transparent;
+	border: none;
+	/* position: relative; */
+	margin: 20px;
+	align-self: flex-end;
+	cursor: pointer;
+	transition: all .2s linear;
+	transition-delay: .4s;
+	opacity: 0;
+}
+.modal_wrapper.is-open .modal_close_button{
+	opacity: 1;
+}
+
+/* ========================================== */
+
+.container{
+    max-width: 85vw;
+    /* align-items: center; */
+    margin: 0 auto;
+    /* position: fixed; */
+    /* border: 1px solid aliceblue; */
+}
+.main_block{
+    background-image: url("../img/bg.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;   
+    /* font-size: 64px;  */
+}
+.main_title,
+.main_subtitle{
+    color: aliceblue;
+    text-transform: uppercase;
+    
+   
+}
+.main_title{
+    animation-duration: 1s; /* продолжительность анимации */
+    animation-name: slideup; /* какая анимация применяется к элементу */
+    animation-fill-mode: forwards;
+    /* transition: opacity 2s ease-out; */
+
+     font-stretch: ultra-expanded;
+    font-weight: bold;
+    line-height: 1em;
+    font-size: 6em;
+}
+.main_subtitle{
+  animation-duration: 1s; /* продолжительность анимации */
+  animation-name: slidedown; /* какая анимация применяется к элементу */
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  padding-left: 0.5%;
+  font-size: 3em;
+  line-height: 1.8em;
+}
+.main_block_title{
+  padding-top: 15%;
+  pointer-events: none;
+}
+
+
+
+
+
+@keyframes slideup { 
+  from{
+    transform: translateY(0.5em);
+    opacity: 0;
+    }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slidedown { 
+  from{
+    transform: translateY(-0.5em);
+    opacity: 0;
+    }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/* анимация именишения высоты элемента от исходного до 10% высоты страницы */
+/* @keyframes slidein { 
+
+  to {
+    height: 10vh;
+  }
+} */
+/*.block{
+    height: 50%;
+    width: 50%;
+    background-color: #fff;
+    position: fixed;
+
+    animation-duration: 3s; /* продолжительность анимации */
+   /* animation-name: slidein; /* какая анимация применяется к элементу */
+    /*animation-fill-mode: forwards; /* элемент не возвращается в исходное состояние после завершения анимации */
+/*}
+
+/*медиазапросы*/
+
+@media(max-width: 920px){ 
+	.main_title{
+    font-size: 4em;
+  }
+  .main_subtitle{
+    line-height: 1em;
+  }
+
+  .submenu{
+   transform: translateY(0px);
+  }
+  .show_submenu{
+    transform: rotate(180deg) scale(0.7, 0.7);
+  }
+  #studio:hover .show_submenu{
+  transform: rotate(0deg) scale(0.7, 0.7);
+  }
+  .footer_block{
+    font-size: 1em;
+  }
+}
+
+@media(max-width: 750px){/* скрывается меню */
+  .menu_button{
+		display: block;
+	}
+	.close_menu{
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 10%;
+		cursor: pointer;
+	}
+  .navbar_panel{
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100vw;
+		height: 100%;
+		background-color: #fff;
+		z-index: 2;
+		flex-direction: column; /*выстроить дочерние элементы в столбик*/
+		justify-content: center; /*по горизонтали*/
+		transition: transform .2s, opacity .2s;
+		transform: translate(-100%); /*убирается меню в сторону*/
+		opacity: 0;
+	}
+	.navbar{
+		width: 100%;
+	}
+	.navbar_menu .menu{
+		font-size: 1.5em;
+		flex-direction: column;
+	}
+  .foot_bar .menu{
+    padding: 0;
+    float: left;
+  }
+	.menu_item:not(:last-child){
+		margin-right: 0;
+	}
+  .menu_item{
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	.menu_link:after{
+		display: none;
+	}
+  .show_submenu{
+   display: none;
+  }
+  .submenu{
+    opacity: 1;
+    background-color: inherit;
+    position: inherit;
+    font-size: 0.8em;
+    padding-left: 25px;
+    margin-bottom: -20px;
+  }
+	.is-open{
+		opacity: 1;
+		transform: translate(0%);
+		z-index: 3;
+	}
+  .footer_block{
+    display: block;
+  }
+  .foot_bar .menu{
+    display: flex;
+    padding-bottom: 30px;
+  }
+  .foot_bar{
+     display: block;
+  }
+  .foot_wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+  .foot_bar .foot_wrapper{
+    display: block;
+  }
+  footer .logo{
+    margin: 0;
+  }
+}
+
+@media(max-width: 620px){ 
+	.main_title{
+    font-size: 2.5em;
+  }
+  .main_subtitle{
+    line-height: 1em;
+    font-size: 1.5em;
+  }
+}
+@media(max-width: 420px){
+    .text{
+    font-size: 0.7em;
+  }
+ }
