@@ -77,10 +77,19 @@
 		h4{
 			font-family: 'Philosopher', sans-serif; /* если выбранный шрифт не отобразится, его заменить установленный по умолчанию в браузере шрифт без засечек */
 		}
+    button{
+      background-color: transparent;
+      border: none;
+    }
 		header{
 			background-color: aliceblue;
 			font-size: 0.8em;
 		}
+    .section_container{
+      width: 70vw;
+      max-width: 95vw;
+      margin: 0 auto;
+    }
 	
 /* ===============================Стили шапки сайта========================= */
 .logo{
@@ -120,10 +129,8 @@
 }*/
 .menu_item{
 	margin: 5% 0px;
-  font-weight: black;
 }
 .menu_link{
-	color: inhert; /*цвет текста как у родителя (body)*/
   display: inline-block;
   margin: 0 20px;
   position: relative;
@@ -304,8 +311,8 @@ footer{
 	/* flex-grow: 1; занимает всё доступное место по ширине */
 	opacity: 0;
 	display: flex;
-	padding: 50px;
-  padding-left: 50px;
+	padding: 100px;
+  padding-left: 70px;
 	border-radius: 10px;
 	transform: translateY(-10%);
 	transition: transform .2s, opacity .2s;
@@ -364,6 +371,7 @@ footer{
 .container{
     max-width: 85vw;
     margin: 0 auto;
+    /* border: 1px solid red; */
 }
 .main_block{
     background-image: url("../img/bg.jpg");
@@ -408,15 +416,16 @@ footer{
 
 .block_title{
   font-size: 3em;
-  padding: 8% 0 2% 1%;
+  padding: 10% 0% 2% 0%;
+  pointer-events: none;
 }
 .image_block{
   position: relative;
   max-height: 60vh;
   overflow: hidden;
-  margin: 10px;
-  transition: all 0.5s;
-
+  margin-top: 20px;
+  transition: all 0.3s;
+  display: block;
 }
 .block_image{
   width: 100%; /* картинка становится ровно по блоку в ширину */
@@ -427,16 +436,209 @@ footer{
   font-size: 2em;
   bottom: 0;
   padding: 30px;
+  pointer-events: none;
 }
-.image_block:hover{
+.image_block:active{
   transform: scale(0.99, 0.99);
 }
 .section_block{
   display: flex;
 }
+.section_block .image_block:first-child{
+  margin-right: 20px;
+}
+.image_title:after{
+	content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: aliceblue;
+  position: absolute;
+  margin-top: 10px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .3s ease;
+}
+.image_block:hover .image_title:after{
+  transform: scaleX(1); /* плавное подчёркивание */
+  transform-origin: bottom left;
+  opacity: 1;
+}
+/* ================================================ */
+.first_block{
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 8%;
+  /* justify-content: center; */
+}
+.block_text{
+  padding-right: 5%;
+  width: 60%;
+}
+.first_block_image{
+  display: flex;
+  position: relative;
+  /* border: 1px solid black; */
+}
+.image{
+  position: absolute;
+  transform: scale(calc(1/var(--order)), calc(1/var(--order)));
+  /* left: calc(10%*var(--order)); */
+}
+#image1{
+  left: 30%;
+  bottom: -50%;
+}
+#image2{
+  right: 70%;
+  top: 40%;
+}
+#image3{
+  right: 110%;
+  top: 0;
+}
+#image4{
+  right: 100%;
+  top: 0%;
+}
 
+/* ==================слайдер===================== */
 
+.section_slider{
+  margin-left: calc(30vw/2);
+}
 
+.slider {
+  display: flex;    
+  transition: transform 0.5s ease-in-out;   
+	/* min-width: 20%;    */
+  width: 100%;
+  /* margin: 10px; */
+  /* border : 1px solid black ; */
+  /* padding-left: 13.5%; */
+  margin-right: 0;
+}
+.slide{
+  height: 100%;
+  width: 100%; 
+  margin-right: 20px;
+  position: relative;
+  display: flex;
+}
+.slide:active{
+  transform: scale(0.99, 0.99);
+}
+.slide_img{
+  transition: all .3s ease-in-out; 
+}
+.card_image{
+	-o-object-fit: cover;
+  object-fit: cover;
+  height: 350px; /* задание одинаковых размеров всем картинкам в карточках*/
+}
+.slides_wrapper{
+  width: 100%;
+  /* height: 100%; */
+  overflow: hidden;
+  /* border: 1px solid #000; */
+  position: relative;
+
+  }
+.slide_title{
+  position: absolute;
+  color: aliceblue;
+  font-size: 1.5em;
+  bottom: 0;
+  padding: 25px;
+}
+.slide_title:after{
+	content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: aliceblue;
+  position: absolute;
+  margin-top: 5px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .3s ease;
+}
+.slide:hover .slide_title:after{
+  transform: scaleX(1); /* плавное подчёркивание */
+  transform-origin: bottom left;
+  opacity: 1;
+}
+button:focus {
+  outline: none;
+}
+.controls button {
+  position: absolute;
+  z-index: 2;
+  /* border-radius: 5px; */
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 0px 20px;
+  transition: opacity .2s linear;
+}
+.controls button svg{
+  stroke: #fff;
+}
+.controls button:hover{
+  opacity: 1;
+}
+.controls button:hover svg{
+  stroke: rgb(255, 255, 255);
+}
+.controls{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+}
+.next_button{
+  right: 0;
+	z-index: 2;
+  cursor: pointer;
+}
+
+/* ====================вопросы===================== */
+
+.questions_block{
+  background-image: url("../img/questions_main.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    /* display: block; */
+    position: relative;
+    margin-top: 8%;
+}
+.questions_block a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.questions_block .block_title{
+  color: aliceblue;
+  /* font-size: 2em; */
+  padding: 50px 0px;
+  bottom: 0;
+  position: absolute;
+}
+a .next_button{
+position: absolute;
+right: 15vw;
+top: 50%;
+}
+.questions_block:active .block_title{
+  transform: scale(0.99, 0.99);
+}
+.next_button:active{
+  transform: scale(0.99, 0.99);
+}
+/* ==================анимации==================== */
 
 @keyframes slideup { 
   from{
@@ -494,6 +696,16 @@ footer{
  margin-bottom: 20px;
  font-size: 16px;
 }
+  #image1,
+  #image3{
+    display: none;
+  }
+  #image2{
+    top: 10%;
+  }
+  .first_block{
+    margin-bottom: 0%;
+  }
  }
 @media(max-width: 920px){ 
 	.main_title{
@@ -520,6 +732,25 @@ footer{
     .modal_window{
     display: block;
   }
+  .card_image{
+    height: 300px;
+  }
+
+  .block_text{
+    width: 90%;
+    padding-bottom: 5%; 
+  }
+
+.section_block .image_block:first-child{
+  margin-right: 0px;
+}
+
+      .section_container{
+      width: 95vw;
+    }
+    .section_slider{
+  margin-left: calc(5vw/2);
+}
 }
 
 @media(max-width: 750px){/* скрывается меню */
@@ -587,12 +818,8 @@ footer{
 
 
   .block_title{
+    padding-top: 8%;
     font-size: 2em;
-    /* padding-left: 6%; */
-    
-  }
-  .section_wrapper{
-    max-width: 95vw;
   }
 
 
@@ -616,6 +843,25 @@ footer{
   footer .logo{
     margin: 0;
   }
+  /* .slider{
+      margin: 0;
+  } */
+  .card_image{
+    height: 250px;
+  }
+  .slide{
+  margin-right: 10px;
+
+}
+  .first_block{
+  display: block;
+}
+  #image2{
+    display: none;
+  }
+  a .next_button{
+    display: none;
+  }
 }
 
 @media(max-width: 620px){ 
@@ -632,8 +878,9 @@ footer{
   }
   .block_title{
     font-size: 1.5em;
-    /* padding-top: 7%;
-    padding-bottom: 2%; */
+  }
+  .block_text{
+    font-size: 0.8em;
   }
   .image_title{
     font-size: 1.5em;
@@ -658,6 +905,12 @@ footer{
  font-size: 14px;
      margin-left: 0;
 }
+  /* .slider{
+      padding-left: 1vw;
+  } */
+.menu{
+      font-size: 0.8em;
+    }
 }
 @media(max-width: 420px){
     .text{
