@@ -11,9 +11,13 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 <script defer src="js/includeHeaderFooter.js"></script>
+<script defer src="js/includeSlider.js"></script>
+<script defer src="js/includeQuestionsBlock.js"></script>
 <script defer src="js/script.js"></script>
+<script defer src="js/scroll.js"></script>
 <script defer src="js/slider.js"></script>
 <script defer src="js/modalWindow.js"></script>
+<script defer src="js/xmlParse.js"></script>
 
 <title>Conceptrary</title>
 </head>
@@ -21,20 +25,20 @@
     <header></header>
     <div class="modal_wrapper"></div>
     <main>
-        <!-- <div class="block"></div> -->
         <section class="main_block">
             <div class="main_block_title container">
                 <h1 class="main_title">сборник <br> концепт-артов</h1>
                 <h2 class="main_subtitle">разных мультфильмов</h2>
             </div>
+        <a href="#anhor" class="main_scroll" title="к следующему экрану">
+            <div class="scroll_arrow">&rsaquo;</div><!-- символ стрелочки -->
+            <span class="scroll_title">Листать дальше</span>
+        </a>
         
-<!-- <svg width="62" height="52" viewBox="0 0 62 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 22.5C2.067 22.5 0.499999 24.067 0.5 26C0.500001 27.933 2.067 29.5 4 29.5L4 22.5ZM60.4749 28.4749C61.8417 27.108 61.8417 24.8919 60.4749 23.5251L38.201 1.25125C36.8342 -0.115581 34.6181 -0.115581 33.2513 1.25125C31.8844 2.61809 31.8844 4.83417 33.2513 6.201L53.0503 26L33.2513 45.799C31.8844 47.1658 31.8844 49.3819 33.2513 50.7487C34.6181 52.1156 36.8342 52.1156 38.201 50.7487L60.4749 28.4749ZM4 29.5L58 29.5L58 22.5L4 22.5L4 29.5Z" fill="#E7E7E7"/>
-</svg>
- -->
         </section>
 
-        <section class="section_container">
+        <section class="section_container container" id="anhor">
+            
             <h3 class="block_title">Концепты</h3>
 <div class="first_block">
             <div class="block_text">Концепты - это рабочие арты и&nbsp;наброски, на основе которых строится визуальная часть фильмов, игр
@@ -42,111 +46,43 @@
          <div class="first_block_image">
                 
            
-                <img class="image" id="image1" style="--order: 2" src="img/concept1.png" alt="Вверх">
+                <img class="image" id="image1" src="img/concept1.png" alt="Вверх">
                
-                <img class="image" id="image3" style="--order: 2" src="img/concept3.png" alt="Красные туфельки">
+                <img class="image" id="image3" src="img/concept3.png" alt="Красные туфельки">
                 <!-- <img class="image" id="image4" style="--order: 2" src="img/concept4.png" alt="Красавица и чудовище"> -->
-                <img class="image" id="image2" style="--order: 2" src="img/concept2.png" alt="Зверополис">
+                <img class="image" id="image2" src="img/concept2.png" alt="Зверополис">
                 <img class="block_image" src="img/concept.png" alt="Клаус">
             </div>
            
         </div>
         </section>
 
-        <section class="section_container">
+        <section class="container section_container">
             <h3 class="block_title">Студии</h3>
             
-                <a href="next.html" class="image_block">
+                <a href="studio.html" class="image_block">
                     <h4 class="image_title">Pixar</h4>
-                    <img class="block_image" src="img/pixar_main.png" alt="Дисней">
+                    <img class="block_image dynamic_link" src="img/Pixar.jpg" alt="Пиксар" data-source="Pixar">
                 </a>
                 <div class="section_block">
-                <a href="next.html" class="image_block">
+                <a href="studio.html" class="image_block">
                     <h4 class="image_title">Disney</h4>
-                    <img class="block_image" src="img/disney.png" alt="Дисней">
+                    <img class="block_image dynamic_link" src="img/Disney.jpg" alt="Дисней" data-source="Disney">
                 </a>
-                <a href="next.html" class="image_block">
+                <a href="studio.html" class="image_block">
                     <h4 class="image_title">Dreamworks</h4>
-                    <img class="block_image" src="img/dreamworks_main.png" alt="Дисней">
+                    <img class="block_image dynamic_link" src="img/Dreamworks.jpg" alt="Дримворкс" data-source="Dreamworks">
                 </a>
             </div>
-                <a href="next.html" class="image_block">
-                    <h4 class="image_title">Pixar</h4>
-                    <img class="block_image" src="img/pixar_main.png" alt="Дисней">
+                <a href="studio.html" class="image_block">
+                    <h4 class="image_title">Ghibli</h4>
+                    <img class="block_image dynamic_link" src="img/Ghibli.jpg" alt="Гибли" data-source="Ghibli">
                 </a>
         </section>
+<!-- места для вставки блоков -->
+        <section class="section_slider container section_container"></section>
 
-        <section class=" section_slider">
-            <h3 class="block_title ">Смотреть ещё</h3>
-
-
-            <div class="slides_wrapper">
-                <div class="controls">
-                    <button class="prev_button">
-                        <svg width="18" height="33" viewBox="0 0 18 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.5 1.5L1.85355 16.1464C1.65829 16.3417 1.65829 16.6583 1.85355 16.8536L16.5 31.5"
-                                stroke="white" stroke-width="3" stroke-linecap="round" />
-                        </svg>
-                    </button>
-                    <button class="next_button">
-                        <svg width="18" height="33" viewBox="0 0 18 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.5 1.5L16.1464 16.1464C16.3417 16.3417 16.3417 16.6583 16.1464 16.8536L1.5 31.5"
-                                stroke="white" stroke-width="3" stroke-linecap="round" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="slider">
-                    <div class="slide">
-                        <h4 class="slide_title">Studio Ghibli</h4>
-                        <a href="next.html" class="slide_img">
-                            <img class="card_image" src="./img/ghibli.png" alt="постер"
-                                data-source="Beauty_and_the_Beast">
-                        </a>
-                    </div>
-
-                    <div class="slide">
-                        <h4 class="slide_title">Warner Bros. Cartoons</h4>
-                        <a href="https://characterdesignreferences.com/art-of-animation-6/art-of-the-iron-giant-part-1" class="slide_img">
-                            <img class="card_image" src="./img/gigant.png" alt="постер"
-                                data-source="Beauty_and_the_Beast">
-                        </a>
-                    </div>
-
-                    <div class="slide">
-                        <h4 class="slide_title">Bly sky studios</h4>
-                        <a href="next.html" class="slide_img">
-                            <img class="card_image" src="./img/blue sky.png" alt="постер" data-source="Beauty_and_the_Beast">
-                        </a>
-                    </div>
-                    
-                    <div class="slide">
-                        <h4 class="slide_title">Family Crueds</h4>
-                        <a href="next.html" class="slide_img">
-                            <img class="card_image" src="./img/фон.jpg" alt="постер" data-source="Beauty_and_the_Beast">
-                        </a>
-                    </div>            
-                </div>
-            </div>
-        </section>
-
-        <section class="questions_block">
-            <a href="next.html">
-                <button class="next_button">
-                    <svg width="18" height="33" viewBox="0 0 18 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.5 1.5L16.1464 16.1464C16.3417 16.3417 16.3417 16.6583 16.1464 16.8536L1.5 31.5" stroke="white"
-                            stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                </button>
-                                
-            <div class="container">
-
-                <h3 class="block_title">Остались вопросы?</h3>
-                
-               
-            </div>
-             </a>
-        </section>
+        <section class="questions_block"></section>
     </main>
     <footer></footer>
 </body>

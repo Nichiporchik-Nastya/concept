@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- добавление иконки возле заголовка страницы на вкладке браузера -->
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script defer src="js/includeHeaderFooter.js"></script>
+    <script defer src="js/includeSlider.js"></script>
+    <script defer src="js/includeQuestionsBlock.js"></script>
+
+    <script defer src="js/script.js"></script>
+    <script defer src="js/newPage.js"></script>
+    <script defer src="js/slider.js"></script>
+    <script defer src="js/modalWindow.js"></script>
+    <script defer src="js/xmlParse.js"></script>
+
+    <script>
+        // response.setIntHeader("Refresh", 1);
+
+        window.onload = function () {
+            if (!window.location.hash) {
+                window.location = window.location + '#loaded';
+                window.location.reload();
+            }
+        }
+    </script>
+
+    <title>Conceptrary</title>
+</head>
+
+<body>
+    <header></header>
+    <div class="modal_wrapper"></div>
+    <main>
+        <section>
+            <div class="next_first_block">
+                <h2 class="next_first_title main_subtitle">сборник концепт-артов</h2>
+            </div>
+            <div class="breadcrumbs container">
+                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex row centered breadcrumbs">
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop="item" href="./index.html">
+                            <span itemprop="name">Главная</span>
+                        </a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                   
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <span itemprop="name">Текущая студия</span>
+                        <meta itemprop="item" content="./studio.html">
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section class="section_container container">
+            <h3 class="block_title">Упс. Что-то пошло не так</h3>
+                <div class="block_text st_text">Обновите страницу, чтобы продолжить</div>
+                <div class="cartoons_wrapper">
+                </div>
+        </section>
+        <section class="section_container section_slider container"></section>
+        <section class="questions_block"></section>
+</main>
+<footer></footer>
+</body>
+
+</html>

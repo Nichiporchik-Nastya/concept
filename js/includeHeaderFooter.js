@@ -5,18 +5,7 @@ includedFooter.insertAdjacentHTML("afterbegin", `
 	<div class="foot_wrapper">
 	<div class="text">
 	<p class="mail"><a href="mailto:nai200315@gmail.com">conceptrary@gmail.com</a></p>
-	<div class="author_info">
-					<?xml version="1.0" encoding="UTF-8"?>
-					<?xml-stylesheet type="text/xsl" href="xml/author_table.xsl"?>
-					<information>
-						<author>
-							<name>Ничипорчик Анастасия</name>
-							<specialty>ДЭиВИ</specialty>
-							<university>БГТУ</university>
-							<year>2021</year>
-						</author>
-					</information>
-	</div>
+	<div class="author_info"></div>
 	</div>
 	<a href="./index.html" class="logo">
 		<picture>
@@ -34,28 +23,28 @@ includedFooter.insertAdjacentHTML("afterbegin", `
 							</p>
 
 						 <ul class="submenu">
-        <li class="submenu_item"><a class="submenu_link" href="#">Дисней</a></li>
-        <li class="submenu_item"><a class="submenu_link" href="#">Пиксар</a></li>
-		<li class="submenu_item"><a class="submenu_link" href="#">Дримворкс</a></li>
-        <li class="submenu_item"><a class="submenu_link" href="#">Блю Скай</a></li>
+        <li class="submenu_item dynamic_link" data-source="Disney"><a class="submenu_link" href="studio.html" >Дисней</a></li>
+        <li class="submenu_item dynamic_link" data-source="Pixar"><a class="submenu_link" href="studio.html">Пиксар</a></li>
+		<li class="submenu_item dynamic_link" data-source="Dreamworks"><a class="submenu_link" href="studio.html">Дримворкс</a></li>
+        <li class="submenu_item dynamic_link" data-source="Ghibli"><a class="submenu_link" href="studio.html">Гибли</a></li>
       </ul>
 
 
 						</li>
 						<div class="foot_wrapper">
 						<li class="menu_item " id="about">
-							<a href="#" class="menu_link">
+							<a class="menu_link">
 								О&nbsp;проекте <!-- неразрывный пробел -->
 							</a>
 						</li>
 						
 						<li class="menu_item ">
-							<a href="#" class="menu_link">
+							<a href="galery.html" class="menu_link">
 								Галерея
 							</a>
 						</li>
 						<li class="menu_item">
-							<a href="#" class="menu_link">
+							<a href="questions.html" class="menu_link">
 								Вопросы?
 							</a>
 						</li>
@@ -87,7 +76,7 @@ includedHeader.insertAdjacentHTML("afterbegin", `
 
 					<ul class="menu">
 						<li class="menu_item" id="about">
-							<a href="#" class="menu_link">
+							<a class="menu_link">
 								О&nbsp;проекте <!-- неразрывный пробел -->
 							</a>
 						</li>
@@ -100,21 +89,21 @@ includedHeader.insertAdjacentHTML("afterbegin", `
 							</p>
 							
 						 <ul class="submenu">
-        <li class="submenu_item"><a class="submenu_link" href="#">Дисней</a></li>
-        <li class="submenu_item"><a class="submenu_link" href="#">Пиксар</a></li>
-		<li class="submenu_item"><a class="submenu_link" href="#">Дримворкс</a></li>
-        <li class="submenu_item"><a class="submenu_link" href="#">Блю Скай</a></li>
+        <li class="submenu_item dynamic_link" data-source="Disney"><a class="submenu_link" href="studio.html" >Дисней</a></li>
+        <li class="submenu_item dynamic_link" data-source="Pixar"><a class="submenu_link" href="studio.html">Пиксар</a></li>
+		<li class="submenu_item dynamic_link" data-source="Dreamworks"><a class="submenu_link" href="studio.html">Дримворкс</a></li>
+        <li class="submenu_item dynamic_link" data-source="Ghibli"><a class="submenu_link" href="studio.html">Гибли</a></li>
       </ul>
 
 
 						</li>
 						<li class="menu_item">
-							<a href="#" class="menu_link">
+							<a href="galery.html" class="menu_link">
 								Галерея
 							</a>
 						</li>
 						<li class="menu_item">
-							<a href="#" class="menu_link">
+							<a href="questions.html" class="menu_link">
 								Вопросы?
 							</a>
 						</li>
@@ -150,7 +139,7 @@ modalWrapper.insertAdjacentHTML("afterbegin", `
 				<path d="M22 2L2 22" stroke="black" stroke-width="2" stroke-linecap="round" />
 			</svg>
 		</button>
-		<h2 class="modal_title"><span>Conceptrary</span> <br>сборник<br>концептов</h2>
+		<h2 class="modal_title"><span>Conceptrary</span><br>сборник<br>концептов</h2>
 			<div class="modal_block">
 				<h3 class="modal_subtitle">concept&nbsp;– идея + library&nbsp;– библиотека</h3>
 				<p>Онлайн-сборник концептуальных изображений персонажей и&nbsp;окружения из самых разных мульт-вселенных</p>
@@ -160,3 +149,4 @@ modalWrapper.insertAdjacentHTML("afterbegin", `
 			</div>
 	</div>
 `);
+

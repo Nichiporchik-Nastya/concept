@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- добавление иконки возле заголовка страницы на вкладке браузера -->
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script defer src="js/includeHeaderFooter.js"></script>
+    <script defer src="js/includeSlider.js"></script>
+    <script defer src="js/includeQuestionsBlock.js"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/slider.js"></script>
+    <script defer src="js/modalWindow.js"></script>
+    <script defer src="js/xmlParse.js"></script>
+
+    <title>Conceptrary</title>
+</head>
+
+<body>
+    <header></header>
+    <div class="modal_wrapper"></div>
+    <main>
+        <section>
+            <div class="next_first_block" style="background-image: url('img/orange.jpg')">
+                <h2 class="next_first_title main_subtitle">сборник концепт-артов</h2>
+            </div>
+            <div class="breadcrumbs container">
+                <!-- <ul class="bread_items block_text">
+                    <li class="bread_item">Главная</li>
+                    <li class="bread_item">Галерея</li>
+                </ul> -->
+
+                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex row centered breadcrumbs">
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop="item" href="./index.html">
+                            <span itemprop="name">Главная</span>
+                        </a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                   
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <span itemprop="name">Галерея</span>
+                        <meta itemprop="item" content="./galery.html">
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section class="section_container container">
+            <h3 class="block_title">Галерея мультфильмов</h3>
+            <div class="block_text st_text">«Если бы меня попросили в двух словах изложить своё мнение о&nbsp;том, что такое анимация,
+            я&nbsp;бы сказал, это значит, что я&nbsp;могу создать всё, что угодно»&nbsp;— <span>Хаяо Миядзаки</span></div>
+            <div class="cartoons_wrapper">
+
+                <div class="cartoon_card">
+                    <h4 class="card_title">Вверх</h4>
+                    <a href="next.html">
+                        <img src="img/Pixar/Up.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Up">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Корпорация монстров</h4>
+                    <a href="next.html">
+                        <img src="img/Pixar/Monsters.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Monsters">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Хороший динозавр</h4>
+                    <a href="next.html">
+                        <img src="img/Pixar/Dinosaur.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Dinosaur">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Тачки</h4>
+                    <a href="next.html">
+                        <img src="img/Pixar/Cars.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Cars">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Семейка Крудс</h4>
+                    <a href="next.html">
+                        <img src="img/Dreamworks/Croods.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Croods">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Кунг-фу панда</h4>
+                    <a href="next.html">
+                        <img src="img/Dreamworks/Panda.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Panda">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Шрек</h4>
+                    <a href="next.html">
+                        <img src="img/Dreamworks/Shrek.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Shrek">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Мадагаскар</h4>
+                    <a href="next.html">
+                        <img src="img/Dreamworks/Madagascar.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Madagascar">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Мегамозг</h4>
+                    <a href="next.html">
+                        <img src="img/Dreamworks/Megamind.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Megamind">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Как приручить дракона</h4>
+                    <a href="next.html">
+                        <img src="img/Dreamworks/Dragon.jpg" class="cartoon_card_img dynamic_link" alt="постер"
+                            data-source="Dragon">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Ходячий замок Хаула</h4>
+                    <a href="next.html">
+                        <img src="img/Ghibli/Casle.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Casle">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Мой сосед Тоторо</h4>
+                    <a href="next.html">
+                        <img src="img/Ghibli/Totoro.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Totoro">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Ведьмина служба доставки</h4>
+                    <a href="next.html">
+                        <img src="img/Ghibli/Witch.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Witch">
+                    </a>
+                </div><div class="cartoon_card">
+                    <h4 class="card_title">Унесённые призраками</h4>
+                    <a href="next.html">
+                        <img src="img/Ghibli/Ghost.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Ghost">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Принцесса Мононоке</h4>
+                    <a href="next.html">
+                        <img src="img/Ghibli/Mononoke.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Mononoke">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Рапунцель: запутанная история</h4>
+                    <a href="next.html">
+                        <img src="img/Disney/Tangled.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Tangled">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Книга джунглей</h4>
+                    <a href="next.html">
+                        <img src="img/Disney/Jungle.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Jungle">
+                    </a>
+                </div>
+                <div class="cartoon_card">
+                    <h4 class="card_title">Красавица и чудовище</h4>
+                    <a href="next.html">
+                        <img src="img/Disney/Beauty.jpg" class="cartoon_card_img dynamic_link" alt="постер" data-source="Beauty">
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+        <section class="section_container section_slider container"></section>
+        <section class="questions_block"></section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
