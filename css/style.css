@@ -1,0 +1,253 @@
+.next_first_block{
+    /* background-position: right; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    max-width: 100vw;
+    height: 100vh;   
+    /* position: sticky; */
+    animation-duration: 1s; /* продолжительность анимации */
+    animation-name: slidein; /* какая анимация применяется к элементу */
+    animation-fill-mode: forwards; /* элемент не возвращается в исходное состояние после завершения анимации */
+}
+
+.next_first_title{
+    color: aliceblue;
+    text-transform: uppercase;
+  font-size: 3em;
+  margin-left: calc(15vw/2);
+}
+.breadcrumbs{
+    padding-top: 15px;
+    display: flex;
+}
+/* псевдоэлемент after для всех кроме последнего потомка */
+.breadcrumbs li:not(:last-child):after{
+    content: "\203a"; /* символ стрелочки  */
+    margin: 0 5px;
+    opacity: 0.5;
+}
+.questions_wrapper{
+    /* display: flex; */
+    width: 100%;
+    /* margin-bottom: 10%; */
+    /* justify-content: space-between; */
+}
+.questions_container{
+    display: flex;
+    justify-content: space-between;
+}
+.questions{
+   max-width: 500px;
+   margin-top: 20px;
+}
+.question{
+    border-bottom: 1px solid #000;
+    padding: 10px 0px;
+}
+.image_wrapper{
+    width: 50%;
+    padding-top: 30px;
+    padding-left: 5%;
+}
+.question_image{
+    max-width: 100%;
+
+    /* display: block; */
+    /* right: 0; */
+}
+.question_answer{
+    transform: scaleY(0);
+    /* display: none; */
+    opacity: 0;
+    transition: all 0.3s linear;
+    position: absolute;
+    transform-origin: top;
+}
+.is_open{
+transform: scaleY(1);
+/* display: block; */
+
+  opacity: 1;
+  position: relative;
+/* transition: transform 0.2s linear, display 0.5s; */
+/* transition: all 0.3s linear; */
+}
+.question_answer p{
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+.answer_link{
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+.question_title{ 
+  font-size: 2em;
+  bottom: 0;
+  padding: 2% 0% 2% 0%;
+  pointer-events: none;
+}
+
+/* .is-close{
+    transform: translateY(-20px);
+    display: none;
+    opacity: 0;
+    transition: all 0.2s linear;
+    position: absolute;
+} */
+
+.show_answer{
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
+}
+.close{
+    transform: rotate(0deg);
+}
+.answer_block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 5;
+}
+.answer_block:active{
+    transform: translateY(1px);
+}
+.block_text{
+    padding-bottom: 0;
+    width: 100%;
+    padding-right: 0%;
+}
+.st_text{
+    width: 50%;
+}
+.cartoons_wrapper{
+    display: flex;
+      flex-wrap: wrap;
+      margin-top: 3%;
+      width: 100%;
+      height: 100%;
+      /* border: 1px solid black; */
+      /* justify-content: space-between; */
+      align-items: center;
+    /* max-width: 70vw; */
+}
+.cartoon_card_img{
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+/* .full_screen{
+    position: relative;
+    transform: scale(5, 5);
+} */
+.cartoon_card_img:hover{
+    height: 100%;
+}
+.card_title{
+    position: absolute;
+    color: aliceblue;
+    bottom: 0;
+    padding: 30px;
+    font-size: 1.2em;
+    line-height: 1em;
+}
+.card_title:after{
+	content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: aliceblue;
+  position: absolute;
+  margin-top: 10px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .3s ease;
+}
+.cartoon_card:hover .card_title:after{
+  transform: scaleX(1); /* плавное подчёркивание */
+  transform-origin: bottom left;
+  opacity: 1;
+}
+.cartoon_card{
+    width: 33%;
+    padding: 0.5%;
+    height: 250px;
+    position: relative;
+}
+.cartoon_card:active{
+  transform: scale(0.99, 0.99);
+}
+.cartoon_card_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.modal_big_img{
+    max-height: 90vh;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+/* анимация именишения высоты элемента от исходного до 10% высоты страницы */
+@keyframes slidein { 
+from{
+    height: 100vh;
+    }
+  to {
+    height: 15vh;
+  }
+} 
+@media(max-width: 920px){
+    /* .cartoons_wrapper{
+        justify-content: space-around;
+    } */
+}
+@media(max-width: 750px){
+    .questions_container{
+        display: block;
+    }
+    .image_wrapper{
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 0;
+    }
+    .next_first_title,
+    .question_title{
+        font-size: 1.5em;
+    }
+    .show_answer{
+        transform: scale(0.7, 0.7);
+    }
+    .st_text{
+    width: 100%;
+    }
+        .cartoon_card{
+        width: 50%;
+        height: 200px;
+    }
+    /* .cartoons_wrapper{
+        justify-content: space-evenly;
+    } */
+}
+ @media(max-width: 620px){
+     .next_first_title,
+    .question_title,
+    .card_title{
+        font-size: 1em;
+    }
+     .cartoon_card{
+        width: 100%;
+        padding: 1%;
+        /* height: 200px; */
+    }
+
+ }
